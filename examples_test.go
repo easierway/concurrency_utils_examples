@@ -26,6 +26,7 @@ func TestAsynExecutor(t *testing.T) {
 	if retStub.GetResult().Err != nil {
 		fmt.Println("The error is", retStub.GetResult().Err)
 		t.Error(retStub.GetResult().Err)
+		return
 	}
 	ret, _ := retStub.GetResult().Result.(*[5]int)
 	fmt.Println("Now, we need the result", *ret)
